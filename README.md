@@ -1,178 +1,227 @@
-# Todo Application - Phase II
+# 🚀 TaskFlow AI - Phase 3 COMPLETE
 
-A full-stack web application with user authentication and todo management functionality.
+**AI-Powered Full-Stack Todo Application with Intelligent Chatbot**
 
-## Features
+---
 
-- User authentication (sign up and sign in)
-- Create, read, update, and delete todos
-- Mark todos as complete/incomplete
-- User-specific data isolation
-- Responsive UI for desktop and mobile
+## 🎯 Features
 
-## Tech Stack
+### Phase 1 ✅
+- Python Console App
+- Basic TODO management
+- Memory-based storage
 
-- **Frontend**: Next.js, TypeScript, Tailwind CSS
-- **Backend**: Python, FastAPI, SQLModel
-- **Database**: PostgreSQL (Neon Serverless)
-- **Authentication**: JWT-based authentication
+### Phase 2 ✅
+- Full-Stack Web Application
+- User Authentication (JWT)
+- TODO CRUD Operations
+- PostgreSQL Database
+- Responsive UI
 
-## Prerequisites
+### **Phase 3 - NEW** 🆕
+- **AI Chatbot Assistant** - Control todos with natural language
+- **Multilingual Support** - English, Urdu, Sindhi
+- **Conversation History** - Persistent chat sessions
+- **Smart Task Management** - AI understands context
+- **Voice Commands** - "Add a todo", "Show my tasks", etc.
 
-- Node.js 18+
-- Python 3.11+
-- Docker and Docker Compose
-- PostgreSQL database
+---
 
-## Setup Instructions
+## 🛠️ Tech Stack
 
-### 1. Clone the Repository
+### Frontend
+- **Framework:** Next.js 14
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI:** Glassmorphism Design
 
+### Backend
+- **Framework:** FastAPI
+- **Language:** Python 3.11+
+- **Database:** PostgreSQL (Neon) / SQLite
+- **ORM:** SQLModel
+- **Authentication:** JWT
+
+### AI Integration 🤖
+- **LLM Provider:** Groq API
+- **Model:** Llama 3.1 8B Instant
+- **Function Calling:** Tool-based architecture
+- **Language Detection:** Automatic
+
+---
+
+## 🌐 Live Demo
+
+| Service | URL |
+|---------|-----|
+| **Frontend** | https://frontend-theta-one-25.vercel.app |
+| **Backend** | https://usama6513-project.hf.space |
+| **GitHub** | https://github.com/usama6513/hack-2ph-3 |
+
+---
+
+## 🚀 Quick Start
+
+### 1. Clone Repository
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/usama6513/hack-2ph-3.git
+cd hack-2ph-3
 ```
 
 ### 2. Backend Setup
-
 ```bash
-# Navigate to backend directory
 cd backend
-
-# Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+venv\Scripts\activate  # Windows
 
-# Install dependencies
 pip install -r requirements.txt
 
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your PostgreSQL connection details and secret key
+# Create .env file
+copy .env.example .env
+# Edit with your API keys
 ```
 
 ### 3. Frontend Setup
-
 ```bash
-# Navigate to frontend directory
 cd frontend
-
-# Install dependencies
 npm install
 
-# Set up environment variables
-cp .env.example .env.local
-# Edit .env.local with backend API URL and other configuration
+# Create .env.local
+copy .env.example .env.local
+# Set NEXT_PUBLIC_API_URL
 ```
 
-### 4. Database Setup
-
+### 4. Run Locally
 ```bash
-# From backend directory
-cd backend
-
-# Run database migrations (if using Alembic)
-# alembic upgrade head
-```
-
-### 5. Running the Application
-
-#### Option A: Using Docker Compose (Recommended)
-
-```bash
-# From project root
-docker-compose up --build
-```
-
-#### Option B: Running Separately
-
-```bash
-# Terminal 1: Start backend
+# Terminal 1 - Backend
 cd backend
 uvicorn src.main:app --reload --port 8000
 
-# Terminal 2: Start frontend
+# Terminal 2 - Frontend
 cd frontend
 npm run dev
 ```
 
-## Application Access
-
+**Access:**
 - Frontend: http://localhost:3000
-- Backend API: http://localhost:8000
-- Backend API Documentation: http://localhost:8000/docs
+- Backend: http://localhost:8000
+- API Docs: http://localhost:8000/docs
 
-## Usage
+---
 
-### 1. Sign Up
-- Navigate to http://localhost:3000/signup
-- Enter a valid email and strong password
-- Account will be created and you'll be redirected to the todo dashboard
+## 🤖 AI Chatbot Examples
 
-### 2. Sign In
-- Navigate to http://localhost:3000/signin
-- Enter your registered email and password
-- Access your todo list at http://localhost:3000/todos
+### English
+```
+User: "Add a todo to buy groceries"
+AI: "Successfully created your todo: buy groceries"
 
-### 3. Managing Todos
-- **Create**: Click "Add Todo" and enter a description
-- **View**: See all your todos on the main dashboard
-- **Update**: Click on a todo description to edit it
-- **Delete**: Use the delete button to remove a todo
-- **Toggle Status**: Click the checkbox to mark as complete/incomplete
-
-## API Endpoints
-
-### Authentication
-- POST /api/auth/signup - Create new user account
-- POST /api/auth/login - Authenticate user
-
-### Todos
-- GET /api/todos - Get all user's todos
-- POST /api/todos - Create a new todo
-- PUT /api/todos/{id} - Update a todo
-- PATCH /api/todos/{id}/status - Toggle todo completion status
-- DELETE /api/todos/{id} - Delete a todo
-
-## Testing
-
-### Backend Tests
-```bash
-cd backend
-pytest
+User: "Show me my todos"
+AI: "You have 4 tasks total: 2 completed and 2 pending..."
 ```
 
-### Frontend Tests
-```bash
-cd frontend
-npm test
+### Urdu
+```
+User: "میرے ٹو ڈو دکھائیں"
+AI: "آپ کے پاس کل 4 کام ہیں: 2 مکمل اور 2 زیر التواء..."
 ```
 
-## Project Structure
+### Sindhi
+```
+User: "منهنجا ٽاسڪ ڏيکاريو"
+AI: "توهان وٽ ڪل 4 ڪم آهن: 2 مڪمل ۽ 2 اڻ ٿيل..."
+```
+
+---
+
+## 📊 Project Structure
 
 ```
-backend/
-├── src/
-│   ├── models/
-│   │   ├── user.py
-│   │   └── todo.py
-│   ├── services/
-│   │   ├── user_service.py
-│   │   └── todo_service.py
-│   ├── api/
-│   │   ├── auth.py
-│   │   └── todos.py
-│   ├── database/
-│   │   └── init.py
-│   └── main.py
-frontend/
-├── src/
-│   ├── pages/
-│   ├── components/
-│   ├── services/
-│   ├── hooks/
-│   └── types/
-├── public/
-├── package.json
-└── tsconfig.json
+hack-2ph-3/
+├── backend/
+│   ├── src/
+│   │   ├── api/
+│   │   │   ├── auth.py
+│   │   │   ├── todos.py
+│   │   │   └── chat.py          # AI Chatbot
+│   │   ├── agents/
+│   │   │   ├── todo_agent.py    # AI Agent
+│   │   │   └── language_detector.py
+│   │   ├── models/
+│   │   │   ├── user.py
+│   │   │   ├── todo.py
+│   │   │   ├── conversation.py
+│   │   │   └── message.py
+│   │   ├── services/
+│   │   │   ├── conversation_service.py
+│   │   │   └── message_service.py
+│   │   └── tools/
+│   │       └── todo_tools.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── chat.tsx         # Chat Page
+│   │   │   └── dashboard-integrated.tsx
+│   │   └── components/
+│   │       └── Chat/            # Chat Components
+│   └── package.json
+└── README.md
 ```
+
+---
+
+## 🔒 Environment Variables
+
+### Backend (.env)
+```env
+DATABASE_URL=postgresql://...
+SECRET_KEY=your_secret_key
+GROQ_API_KEY=gsk_your_key_here
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+```
+
+### Frontend (.env.local)
+```env
+NEXT_PUBLIC_API_URL=https://your-backend.hf.space
+```
+
+---
+
+## 📈 Hackathon Phases
+
+- ✅ **Phase 1:** Python Console App
+- ✅ **Phase 2:** Full-Stack Web App
+- ✅ **Phase 3:** AI Chatbot Integration
+
+---
+
+## 👨‍💻 Author
+
+**USAMA ARYAN**
+
+Made with ❤️ using Next.js, FastAPI & Groq AI
+
+---
+
+## 🎉 Deployment
+
+### Backend (Hugging Face Spaces)
+```yaml
+Platform: Hugging Face Spaces
+SDK: Docker
+Port: 7860
+```
+
+### Frontend (Vercel)
+```yaml
+Platform: Vercel
+Framework: Next.js
+Build: npm run build
+```
+
+---
+
+**Happy Coding!** 🚀
