@@ -9,7 +9,7 @@ const HomePage = () => {
   useEffect(() => {
     if (!loading) {
       if (user) {
-        router.push('/dashboard-integrated');  // Changed from /todos
+        router.push('/dashboard-integrated');
       } else {
         router.push('/landing');
       }
